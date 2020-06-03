@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\ErrorHandler\Exception\FlattenException;
@@ -60,9 +61,19 @@ class Handler extends ExceptionHandler
         }
 
         $statusCode = FlattenException::createFromThrowable($exception)->getStatusCode();
+
+        if ($exception instanceof ModelNotFoundException) {
+            return response([
+                'status' => "error",
+                'message'   => "No Record found for update",
+                'code'   => $statusCode
+            ], $statusCode);
+        }
+
+
         return response([
             'status' => "error",
-            'data'   => $exception->getMessage(),
+            'message'   => $exception->getMessage(),
             'code'   => $statusCode
         ], $statusCode);
     }

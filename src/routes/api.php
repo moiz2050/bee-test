@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('records/create', RecordCreateController::class);
+Route::put('records/{record}', RecordUpdateController::class);
