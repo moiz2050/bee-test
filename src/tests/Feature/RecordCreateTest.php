@@ -21,7 +21,7 @@ class RecordCreateTest extends TestCase
         factory(User::class, 1)->create();
 
         $response = $this->post('/api/records/create', [
-            'title' => 'Wakaaa',
+            'title' => 'Waka Waka',
             'artist' => 'Shakira',
             'genre' => 'pop'
         ]);

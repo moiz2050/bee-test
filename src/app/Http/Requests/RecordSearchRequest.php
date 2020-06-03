@@ -2,11 +2,9 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\ValidationException;
 
-class RecordCreateRequest extends FormRequest
+class RecordSearchRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,14 +24,7 @@ class RecordCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|unique:records|string',
-            'artist' => 'required|string',
-            'genre' => 'required|string'
+            "keyword" => "required|string"
         ];
-    }
-
-    protected function failedValidation(Validator $validator)
-    {
-        throw new ValidationException($validator);
     }
 }
