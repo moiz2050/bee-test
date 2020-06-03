@@ -14,11 +14,11 @@ class RecordResource extends JsonResource
      */
     public function toArray($request)
     {
+        $resource = $this->resource?['record' => $this->resource]:null;
+
         return [
             'status' => 'success',
-            'data' => [
-                'record' => $this->resource
-            ]
+            'data' => $resource
         ];
     }
 }
