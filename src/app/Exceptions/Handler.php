@@ -3,6 +3,8 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Validation\ValidationException;
+use Symfony\Component\ErrorHandler\Exception\FlattenException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -50,6 +52,18 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
-        return parent::render($request, $exception);
+        if ($exception instanceof ValidationException) {
+            return response([
+                'status' => "fail",
+                'data'   => $exception->errors()
+            ], $exception->status);
+        }
+
+        $statusCode = FlattenException::createFromThrowable($exception)->getStatusCode();
+        return response([
+            'status' => "error",
+            'data'   => $exception->getMessage(),
+            'code'   => $statusCode
+        ], $statusCode);
     }
 }
