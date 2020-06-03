@@ -27,4 +27,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
     ];
+
+
+    public function shop()
+    {
+        return $this->hasOne(Shop::class, 'admin_id');
+    }
 }
