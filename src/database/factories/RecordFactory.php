@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Record::class, function (Faker $faker) {
     return [
-        'title' => $faker->titleFemale,
+        'title' => $faker->safeColorName,
         'genre' => 'pop',
         'artist' => $faker->firstName
     ];

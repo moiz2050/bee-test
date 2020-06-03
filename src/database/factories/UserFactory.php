@@ -31,7 +31,7 @@ $factory->afterCreating(User::class, function (User $user, Faker $faker) {
     factory(Shop::class, 1)->create([
         'admin_id' => $user->id
     ])->each(function (Shop $shop){
-        factory(Record::class)->create([
+        factory(Record::class, 3)->create([
             'shop_id' => $shop->id
         ]);
     });

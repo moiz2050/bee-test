@@ -66,8 +66,8 @@ class Handler extends ExceptionHandler
             return response([
                 'status' => "error",
                 'message'   => "No Record found",
-                'code'   => $statusCode
-            ], $statusCode);
+                'code'   => 404
+            ], 404);
         }
 
 
