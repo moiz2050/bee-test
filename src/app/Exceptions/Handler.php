@@ -65,7 +65,7 @@ class Handler extends ExceptionHandler
         if ($exception instanceof ModelNotFoundException) {
             return response([
                 'status' => "error",
-                'message'   => "No Record found for update",
+                'message'   => "No Record found",
                 'code'   => $statusCode
             ], $statusCode);
         }

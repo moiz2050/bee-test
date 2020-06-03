@@ -21,4 +21,13 @@ class RecordRepository implements Repository
 
         return $record;
     }
+
+    public function delete(Model $record)
+    {
+        $record->delete();
+
+        return null;
+    }
+
+
 }

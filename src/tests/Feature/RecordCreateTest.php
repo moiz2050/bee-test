@@ -12,7 +12,7 @@ class RecordCreateTest extends TestCase
     use RefreshDatabase;
 
     /**
-     * A create record feature test example.
+     * A create record feature test.
      *
      * @return void
      */

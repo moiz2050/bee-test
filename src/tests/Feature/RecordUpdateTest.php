@@ -12,11 +12,11 @@ class RecordUpdateTest extends TestCase
     use RefreshDatabase;
 
     /**
-     * A create record feature test example.
+     * A update record feature test.
      *
      * @return void
      */
-    public function testRecordCreateApiSuccessResponse()
+    public function testRecordUpdateApiSuccessResponse()
     {
         factory(User::class, 1)->create();
 
