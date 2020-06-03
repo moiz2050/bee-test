@@ -17,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 Route::post('records/create', RecordCreateController::class);
 Route::put('records/{record}', RecordUpdateController::class);
 Route::delete('records/{record}', RecordDeleteController::class);
+Route::get('records/search', RecordSearchController::class);

@@ -26,9 +26,9 @@ class RecordUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
-            'artist' => 'required',
-            'genre' => 'required'
+            'title' => 'required|string',
+            'artist' => 'required|string',
+            'genre' => 'required|string'
         ];
     }
 
