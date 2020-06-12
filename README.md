@@ -6,7 +6,7 @@
 ##### Steps:
 - ``git clone`` or download this repository:
 - From project root run ``./bin/install.sh`` (Be Patient :))
-- Visit ``http://localhost:9090`` it will redirect you to swagger documentation
+- Visit ``http://localhost:9090/api/documentation`` for swagger documentation
 
 
 ##### DB (GUI):
@@ -38,6 +38,7 @@ database: bee
 ##### APP:
 - There are 3 records seeded at the time of installation in the **records** table.
 - you can create more by following the documentation and start play around with them.
+- Api responses are compliant to [JSend](https://github.com/omniti-labs/jsend) specification
 
 ##### SEARCH:
 - Search functionality is not specific to fields I created it as generic by using ``FULL_TEXT`` search index of MySQL,
